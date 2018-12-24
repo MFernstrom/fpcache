@@ -1,6 +1,14 @@
 unit fpcache;
 
+{
+  Author    Marcus Fernström
+  License   MIT
+  Version   0.1
+  GitHub    https://github.com/MFernstrom/fpcache/
+}
+
 {$mode objfpc}{$H+}
+
 {$WARN 6058 off : Call to subroutine "$1" marked as inline is not inlined}
 {$WARN 3018 off : Constructor should be public}
 
