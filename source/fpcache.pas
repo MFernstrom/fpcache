@@ -3,7 +3,7 @@ unit fpcache;
 {
   Author    Marcus Fernström
   License   MIT
-  Version   0.1
+  Version   0.2
   GitHub    https://github.com/MFernstrom/fpcache/
 }
 
@@ -26,6 +26,7 @@ unit fpcache;
        constructor Init;
      public
        class function Create: TCache;
+       class destructor Destroy;
        class function put(name, data: String): Boolean;
        class function put(name, data: String; lifeTime: Integer): Boolean;
        class function put(name: String; data: Integer): Boolean;
@@ -75,6 +76,12 @@ constructor TCache.Init;
 begin
   inherited Create;
   cacheRecords := TCacheRecords.Create;
+end;
+
+class destructor TCache.Destroy;
+begin
+  cacheRecords.Free;
+  inherited;
 end;
 
 class function TCache.Create: TCache;
