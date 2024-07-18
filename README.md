@@ -38,5 +38,8 @@ begin
 	
 	// Now we get an exception
 	WriteLn(cache.getStr('nope'));
+
+	// Don't forget to free the cache when you're done
+	cache.free;
 end;
 </pre>
